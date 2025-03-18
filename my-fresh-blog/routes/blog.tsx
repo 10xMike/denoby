@@ -10,13 +10,13 @@ export const handler: Handlers = {
 
 export default function Blog({ data }: PageProps<{ posts: { slug: string; content: string }[] }>) {
   return (
-    <div class="px-4 py-8 mx-auto max-w-screen-md">
-      <h1 class="text-4xl font-bold">Blog</h1>
-      <ul class="mt-6">
+    <div class="space-y-6">
+      <h1 class="text-4xl font-bold text-center text-gray-800">Blog</h1>
+      <ul class="space-y-4">
         {data.posts.map((post) => (
-          <li key={post.slug} class="mb-4">
-            <a href={`/blog/${post.slug}`} class="text-blue-500 underline">
-              {post.slug}
+          <li key={post.slug} class="p-4 bg-white shadow-sm rounded-lg">
+            <a href={`/blog/${post.slug}`} class="text-lg font-semibold text-blue-600 hover:underline">
+              {post.slug.replace("-", " ")}
             </a>
           </li>
         ))}
